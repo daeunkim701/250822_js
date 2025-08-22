@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 고차함수, Stream
+    // map, filter, reduce...
+    // 배열 고차함수 -> 배열 압축, 변환, 반복하거나..
+    // Java Array List -> Stream해주고 -> 등등..
+    // JS Array List -> 자체 내부에서 자동 해결 가능
+    const arr = [1, 2, 3, 4, 5];
+    console.log(arr);
+
+    // 2배로 일괄적으로 변환하고 싶다
+    // function makeDouble(x) {
+    //   return x * 2;
+    // }
+    // const doubled = arr.map(makeDouble);
+    // console.log(doubled);
+    
+    const doubled = arr.map((x) => x * 2); // 다른 언어들에 비해 속도가 빨라
+    console.log(doubled);
+
+    // filter, reduce, forEach,...
+    const evens = arr.filter((x) => x % 2 === 0); // true로 모은 것
+    console.log(evens);
+
+    // 그냥 x % 2 는 0이야. 즉 false야.
+    const odds = arr.filter((x) => x % 2); // true로 모은 것
+    console.log(odds);
+
+    // reduce((acc, cur) => 연산식, 초기값)
+    // acc -> accumulator : 지금까지의 연산 결과의 누적
+    // cur -> currentValue : 이번 차시의 값
+    const sum = arr.reduce((acc, cur) => acc + cur, 0);
+    console.log(sum);
+    
+    const product = arr.reduce((acc, cur) => acc * cur, 1);
+    console.log(product);
+
+    // 문자 처리
+    const strArr = ["안녕", "나는", "자바야"];
+    console.log(strArr.reduce((acc, cur) => acc + "" + cur, ""));
+
+    arr.forEach((x) => console.log(x));
+
+
+
+  </script>
+</body>
+</html>
